@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JKEYYY CINEMA | Accueil</title>
+    <link rel="stylesheet" href="cinema.css">
+</head>
+<body>
+
+    <!-- En-tête du site -->
+    <header class="entete-cinema">
+         <div class="barre-navigation">
+        <a href="index.html" class="logo">JKEYYY CINEMA</a>
+
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="search.html">Rechercher un film</a>
+        </nav>
+        </div>
+
+        <div class="presentation">
+            <p class="surtitre">TOUS LES FILMS. TOUTES LES ÉMOTIONS.</p>
+            <h1>Le cinéma, à votre façon.</h1>
+
+            <p>
+                Découvrez des films incontournables, explorez de nouveaux
+                univers et trouvez votre prochain film préféré.
+            </p>
+
+            <a href="search.html" class="bouton bouton-principal">
+                Explorer les films
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- 1. Sélection tendance : Halloween -->
+        <section class="section-films section-halloween">
+            <div class="titre-section">
+                <p class="surtitre surtitre-halloween">
+                    SÉLECTION DE SAISON
+                </p>
+                <h2>Spécial Halloween</h2>
+                <p>
+                    Des classiques de l'horreur aux thrillers
+                    qui donnent des frissons.
+                </p>
+            </div>
+
+            <div id="filmsHalloween" class="grille-films">
+                <p>Chargement de la sélection...</p>
+            </div>
+
+            <button id="chargerHalloween" class="bouton bouton-secondaire">
+                Charger plus de films
+            </button>
+
+            <p id="messageHalloween" aria-live="polite"></p>
+        </section>
+
+        <!-- 2. Les incontournables -->
+        <section class="section-films">
+            <div class="titre-section">
+                <p class="surtitre">À NE PAS MANQUER</p>
+                <h2>Les incontournables</h2>
+                <p>Les grands films à découvrir ou à revoir.</p>
+            </div>
+
+            <div id="films" class="grille-films">
+                <p>Chargement des films...</p>
+            </div>
+
+            <button id="chargerIncontournables" class="bouton bouton-secondaire">
+                Charger plus de films
+            </button>
+
+            <p id="messageIncontournables" aria-live="polite"></p>
+        </section>
+
+        <!-- 3. Pour les curieux -->
+        <section class="section-films">
+            <div class="titre-section">
+                <p class="surtitre">POUR LES CURIEUX</p>
+                <h2>À découvrir</h2>
+                <p>
+                    Des films différents, des histoires originales
+                    et des pépites à explorer.
+                </p>
+            </div>
+
+            <div id="filmsCurieux" class="grille-films">
+                <p>Chargement des découvertes...</p>
+            </div>
+
+            <button id="chargerCurieux" class="bouton bouton-secondaire">
+                Charger plus de films
+            </button>
+
+            <p id="messageCurieux" aria-live="polite"></p>
+        </section>
+
+        <!-- 4. Films sortis en 2024 -->
+        <section class="section-films">
+            <div class="titre-section">
+                <p class="surtitre">À EXPLORER</p>
+                <h2>Films de 2024</h2>
+                <p>
+                    Parcourez les films sortis en 2024.
+                </p>
+            </div>
+
+            <div id="films2024" class="grille-films"></div>
+
+            <button id="chargerPlus" class="bouton bouton-secondaire">
+                Charger les films de 2024
+            </button>
+
+            <p id="messageFilms" aria-live="polite">
+                Cliquez sur le bouton pour afficher les films.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- Pied de page -->
+    <footer>
+        <p>JKEYYY CINEMA — Le cinéma à votre façon.</p>
+    </footer>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

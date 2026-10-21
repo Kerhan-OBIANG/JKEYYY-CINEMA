@@ -1,0 +1,42 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rechercher un film | JKEYYY CINEMA</title>
+    <link rel="stylesheet" href="cinema.css">
+</head>
+<body>
+    <header class="barre-navigation">
+        <a href="index.html" class="logo">JKEYYY CINEMA</a>
+        <a href="index.html">Retour à l'accueil</a>
+    </header>
+
+    <main class="page-recherche">
+        <p class="surtitre">TROUVEZ VOTRE PROCHAIN FILM</p>
+        <h1>Rechercher un film</h1>
+        <p>Entrez un titre pour découvrir les films correspondants.</p>
+
+        <label for="recherche">Titre du film</label>
+        <input
+            type="text"
+            id="recherche"
+            placeholder="Ex. : Interstellar"
+        >
+
+        <p id="messageRecherche">Commencez à saisir un titre.</p>
+
+        <div id="resultats" class="grille-films"></div>
+
+        <button id="chargerResultats" class="bouton bouton-secondaire" hidden>
+            Charger plus de résultats
+        </button>
+    </main>
+
+    <footer>
+        <p>JKEYYY CINEMA — Le cinéma à votre façon.</p>
+    </footer>
+
+    <script src="js/search.js"></script>
+</body>
+</html>

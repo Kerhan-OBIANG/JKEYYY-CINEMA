@@ -1,0 +1,471 @@
+
+/* BASE DU SITE */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #101827;
+    color: #F1F5F9;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: #FFFFFF;
+    line-height: 1.3;
+}
+
+p {
+    color: #B8C3D3;
+}
+
+a {
+    color: #A9C4ED;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+
+/* NAVIGATION FIXE */
+
+.barre-navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 72px;
+    padding: 14px 5%;
+    background-color: #131D2E;
+    border-bottom: 1px solid #2A374B;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo:hover {
+    color: #A9C4ED;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a,
+.barre-navigation > a:not(.logo) {
+    color: #C3CDDB;
+    transition: color 0.2s;
+}
+
+nav a:hover,
+.barre-navigation > a:hover {
+    color: #FFFFFF;
+}
+
+
+/* EN-TÊTE ET PRÉSENTATION */
+
+.entete-cinema {
+    padding: 115px 5% 55px;
+    background: linear-gradient(180deg, #18263C, #101827);
+    border-bottom: 1px solid #2A374B;
+}
+
+.presentation {
+    max-width: 760px;
+    margin: 40px auto 0;
+    text-align: center;
+}
+
+.presentation h1 {
+    font-size: 42px;
+    margin: 12px 0;
+}
+
+.presentation > p:not(.surtitre) {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.surtitre {
+    color: #A9C4ED;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.surtitre-halloween {
+    color: #F0A44B;
+}
+
+
+/* BOUTONS */
+
+.bouton {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s, opacity 0.2s;
+}
+
+.bouton:hover {
+    transform: translateY(-2px);
+}
+
+.bouton-principal {
+    background-color: #29466D;
+    color: #FFFFFF;
+}
+
+.bouton-principal:hover {
+    background-color: #385B89;
+    color: #FFFFFF;
+}
+
+.bouton-secondaire {
+    margin-top: 15px;
+    background-color: #1B2A40;
+    color: #FFFFFF;
+    border-color: #405573;
+}
+
+.bouton-secondaire:hover {
+    background-color: #2A405F;
+}
+
+.bouton:disabled {
+    opacity: 0.6;
+    cursor: wait;
+    transform: none;
+}
+
+button[hidden] {
+    display: none;
+}
+
+
+/* SECTIONS DE FILMS */
+
+main {
+    width: 100%;
+}
+
+.section-films {
+    padding: 35px 5%;
+    scroll-margin-top: 90px;
+}
+
+.titre-section {
+    margin-bottom: 24px;
+}
+
+.titre-section h2 {
+    font-size: 28px;
+    margin: 0;
+}
+
+.titre-section p:not(.surtitre) {
+    margin-bottom: 0;
+}
+
+.section-halloween {
+    background-color: #151D2B;
+    border-top: 1px solid #293548;
+    border-bottom: 1px solid #293548;
+}
+
+
+/* GRILLE ET CARTES DE FILMS */
+
+.grille-films {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 24px;
+}
+
+.carte-film {
+    min-width: 0;
+    overflow: hidden;
+    padding: 10px;
+    background: linear-gradient(145deg, #1C2A40, #141E2F);
+    border: 1px solid #2A3A52;
+    border-radius: 12px;
+    text-align: left;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.carte-film:hover {
+    transform: translateY(-5px);
+    border-color: #789CCB;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.carte-film a {
+    display: block;
+    color: #FFFFFF;
+}
+
+.carte-film img {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    background-color: #222D3E;
+}
+
+.carte-film h3 {
+    min-height: 42px;
+    margin: 12px 2px 6px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.carte-film p {
+    margin: 0 2px 4px;
+    color: #A9C4ED;
+    font-size: 13px;
+}
+
+
+/* MESSAGES DE CHARGEMENT */
+
+#messageFilms,
+#messageHalloween,
+#messageIncontournables,
+#messageCurieux {
+    min-height: 24px;
+    margin-top: 12px;
+    color: #A9C4ED;
+    font-size: 14px;
+}
+
+
+/* PAGE DE RECHERCHE */
+
+.page-recherche {
+    min-height: 65vh;
+    padding: 115px 5% 45px;
+}
+
+.page-recherche h1 {
+    margin: 0 0 10px;
+    font-size: 36px;
+}
+
+.page-recherche label {
+    display: block;
+    margin: 25px 0 8px;
+    color: #F1F5F9;
+}
+
+#recherche {
+    display: block;
+    width: 420px;
+    max-width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #405573;
+    border-radius: 6px;
+    background-color: #182235;
+    color: #FFFFFF;
+}
+
+#recherche::placeholder {
+    color: #8997AA;
+}
+
+#recherche:focus {
+    outline: 2px solid #789CCB;
+}
+
+#messageRecherche {
+    margin: 16px 0;
+    font-size: 14px;
+}
+
+#resultats {
+    margin-top: 20px;
+    scroll-margin-top: 90px;
+}
+
+
+/* PAGE DE DÉTAILS DU FILM */
+
+.fiche-film {
+    min-height: 70vh;
+    padding: 115px 5% 40px;
+}
+
+.details-film {
+    display: grid;
+    grid-template-columns: minmax(200px, 300px) minmax(0, 1fr);
+    align-items: start;
+    gap: 40px;
+    margin: 20px 0 35px;
+}
+
+.affiche-detail img {
+    display: block;
+    width: 100%;
+    border: 1px solid #344258;
+    border-radius: 9px;
+}
+
+.informations-film h1 {
+    margin: 0 0 10px;
+    font-size: 34px;
+}
+
+.informations-film h2 {
+    margin: 24px 0 5px;
+    font-size: 19px;
+}
+
+.informations-film p {
+    margin-top: 5px;
+}
+
+.metadonnees {
+    color: #A9C4ED;
+}
+
+.lien-retour {
+    display: inline-block;
+    margin: 10px 0 25px;
+}
+
+
+/* PIED DE PAGE */
+
+footer {
+    padding: 22px 5%;
+    background-color: #0C1320;
+    border-top: 1px solid #2A374B;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 13px;
+}
+
+
+/* AFFICHAGE SUR MOBILE */
+
+@media (max-width: 650px) {
+    .barre-navigation {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        min-height: 90px;
+        padding: 10px 5%;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    nav {
+        gap: 16px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .entete-cinema {
+        padding: 125px 5% 40px;
+    }
+
+    .presentation {
+        margin-top: 25px;
+    }
+
+    .presentation h1 {
+        font-size: 32px;
+    }
+
+    .section-films,
+    .page-recherche,
+    .fiche-film {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .page-recherche,
+    .fiche-film {
+        padding-top: 120px;
+    }
+
+    .titre-section h2 {
+        font-size: 24px;
+    }
+
+    .grille-films {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .carte-film {
+        padding: 7px;
+    }
+
+    .carte-film img {
+        height: 220px;
+    }
+
+    .carte-film h3 {
+        min-height: 39px;
+        font-size: 14px;
+    }
+
+    .details-film {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .affiche-detail {
+        max-width: 260px;
+    }
+
+    .informations-film h1 {
+        font-size: 28px;
+    }
+}
